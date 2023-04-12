@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring es6</title>
+</head>
+<body>
+    <ul>
+        <h4>3. Destructuring </h4>
+        <li> 3.1 Array  Destructuring </li>
+        <li>3.2  Object Destructuring</li>
+        <li>swap variables</li>
+        <li>nested object destructuring</li>
+        <li>destructuring function parameters</li>
+        
+    </ul>
+    
+
+    <script>
+
+        // array destructuring
+        // array destructuring means put array values into new variables. it helps to easily access arrays values.
+        console.log('array destructuring');
+        let array = [19, 34, 23, 22, 20, 21, 84]
+        let [num1, num2, num3, num4, ...z] = array
+        console.log(num1);
+        console.log(num2);
+        console.log(num3);
+        console.log(num4);
+        console.log(z);
+
+
+        // swap destructuring ways
+        console.log('swap data destructuring ways');
+        let a = 10, b =20;
+        [a, b] = [b, a]
+        console.log(a);
+        console.log(b);
+
+        // object destructuring
+        console.log('object destructuring');
+        const personInfo = {
+            id : 101,
+            firstName : 'John',
+            lastName : 'Doe',
+            age : 21,
+        }
+        const {id, firstName, lastName} = personInfo // object destructuring
+
+        console.log(id);
+        console.log(firstName);
+        console.log(lastName);
+        //console.log(age); // age is not destruct yet
+
+
+        // nested objects destructuring
+        console.log('nested objects destructuring');
+        const personInfo2 = {
+            id2 : 101,
+            firstName : 'John',
+            lastName : 'Doe',
+            age : 21,
+            language : {
+                native : 'English',
+                Beginner : 'Bangla'
+            }
+
+        }
+        const {id3, language} = personInfo2
+        console.log(id3);
+        console.log(language);
+        console.log(language.native); // dot notation
+
+        // destructuring function parameters
+        console.log('destructuring function parameters');
+        const student = {
+            idNumber : 231,
+            name: 'Ashadul',
+            gpa :3.34,
+        }
+        const studentInfo = ({idNumber, name, gpa}) => {
+            console.log(idNumber);
+            console.log(name);
+            console.log(gpa);
+        }
+        studentInfo(student);
+
+        console.log('array and object properties name and destructure name must be the same');
+
+    </script>
+</body>
+</html>
